@@ -29,3 +29,22 @@ pip2 uninstall pycurl
 export PYCURL_SSL_LIBRARY=openssl
 pip2 install pycurl --no-cache-dir
 ```
+
+## Dowload a dataset
+
+### TRMM
+```
+from watools.Collect.TRMM.DataAccess import DownloadData
+
+Dir = '~/datasets/TRMM'
+Startdate = '2018-01-01' # 'yyyy-mm-dd'
+Enddate = '2018-12-31' # 'yyyy-mm-dd'
+latlim = [-50, 50] # (values must be between -50 and 50)
+lonlim = [-180, 180] (values must be between -180 and 180)
+cores = 4 # The number of cores used to run the routine.
+          # It can be 'False' to avoid using parallel computing
+          # routines.
+Waitbar = 1 # will print a waitbar
+TimeCase = 'daily' # "daily" or "monthly"
+DownloadData(Dir, Startdate, Enddate, latlim, lonlim, Waitbar, cores, TimeCase=TimeCase)
+```
