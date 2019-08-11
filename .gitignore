@@ -23,3 +23,5 @@ WebAccounts.py
 # =========================
 # Operating System Files
 # =========================
+*.egg-info/
+*~
